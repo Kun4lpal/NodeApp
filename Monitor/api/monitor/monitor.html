@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Web dictaphone</title>
+  <link href="styles/app.css" rel="stylesheet" type="text/css">
+  <link href="styles/install-button.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Monitoring Tool</h1>
+    </header>
+    <section class="main-controls">
+      <canvas class="visualizer" height="60px"></canvas>
+      <div id="buttons">
+        <li>
+          <button class="record">Record</button>
+        </li>
+        <li>
+          <button class="stop">Stop</button>
+        </li>
+        <!-- These are all test services -->
+        <li>
+          <button class="auth">Test Authentication</button>
+        </li>
+        <li>
+          <button class="profile">Test User Service</button>
+        </li>
+        <li>
+          <button class="send">Test MessageService</button>
+        </li>
+        <li>
+          <button class="speech">Test Speech-to-text</button>
+        </li>
+        <li>
+          <button class="job">Test JobListings</button>
+        </li>
+        <li>
+          <button class="event">Test EventHosting</button>
+        </li>
+      </div>
+    </section>
+    <section class="sound-clips">
+    </section>
+  </div>
+
+  <label for="toggle">Graph</label>
+  <input type="checkbox" id="toggle">
+  <aside>
+    <!-- <button id="install-btn">Install app</button> -->
+    <h2>
+      <meta charset="UTF-8">
+      <title>D3 Graphic</title>
+      <link rel="stylesheet" href="../../d3script/base.css">
+    </h2>
+
+    <div class="container" style="width: 50%; float:left">
+      <h2>Job categories</h2>
+      <h3>Search</h3>      
+      <p>
+        <!-- search box below -->
+        <input id="sbox" class="search" type="text" name="search_field" value="Enter keywords....." />
+        <!-- button below -->
+        <input onclick="removes3();updateDisplay2()" name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="styles/search.png"
+          alt="Search" title="Search" />
+      </p>
+      <div id="chart"></div>
+    </div>
+
+    <div style="width: 50%; float:right">
+      <h2>Number of applicants</h2>
+      <section id="chart2"></section>
+    </div>
+    <script src="../../d3script/d3.min.js"></script>
+    <script src="../../graph/script.js"></script>
+    <script src="../../pi/script.js"></script>
+    <script>
+      window.onload = function () {
+        updateDisplay2();
+        updateDisplay();
+      };</script>
+  </aside>
+
+  <script src="scripts/install.js"></script>
+  <script src="scripts/mediaDevices-getUserMedia-polyfill.js"></script>
+  <!-- Below is your custom application script -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+</body>
+
+</html>
